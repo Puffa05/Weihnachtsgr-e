@@ -7,13 +7,13 @@ let snowflakes = (function() {
 	///////////////////////////// configuration ////////////////////////////
 
 	const defaultConfig = {
-		amount: 100, // amount of flakes
+		amount: 150, // amount of flakes
 		color: ['#AAAACC', '#DDDDFF', '#CCCCDD', '#F3F3F3', '#F0FFFF'], // random colors
 		fontType: ['Arial Black', 'Arial Narrow', 'Times', 'Comic Sans MS'], //	random fonts
 		flakeChar: '*', // char used for flake
 		speed: .05, // speed of flakes
 		size: [15, 30], // minimum/maximum flake font size
-		drift: 30, // horizontal drift
+		drift: 100, // horizontal drift
 	};
 	
 	///////////////////////////// private vars /////////////////////////////
