@@ -122,26 +122,5 @@
     <footer>
         <p>&copy; 2024 Deine Weihnachtsgrüße</p>
     </footer>
-
-    <script>
-        const giftForm = document.getElementById('giftForm');
-        const giftList = document.getElementById('giftItems');
-
-        giftForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value.trim();
-            const gift = document.getElementById('gift').value.trim();
-
-            if (username && gift) {
-                const listItem = document.createElement('li');
-                listItem.textContent = `${username} hat bekommen: ${gift}`;
-                giftList.appendChild(listItem);
-
-                giftForm.reset();
-            }
-        });
-    </script>
-    <script src="script.js"></script>
 </body>
 </html>
