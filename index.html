@@ -58,22 +58,10 @@
             color: #ccc;
         }
 
-        /* Schneeflocken Animation */
-        @keyframes snow {
-            0% { transform: translateY(-100px); }
-            100% { transform: translateY(100vh); }
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            left: calc(100% * var(--random-x));
-            animation: snow 10s linear infinite;
-            font-size: 24px;
-        }
-
-        .snowflake::before {
-            content: "❄";
+        #giftMessage {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #f0e68c;
         }
     </style>
 </head>
@@ -87,27 +75,45 @@
         
         <!-- Virtuelles Geschenk -->
         <div id="gift" class="button" onclick="openGift()">Klicke hier für dein Weihnachtsgeschenk!</div>
+
+        <!-- Bereich für den Witz -->
+        <div id="giftMessage"></div>
     </div>
 
     <footer>
         <p>&copy; 2024 Deine Weihnachtsgrüße</p>
     </footer>
 
-    <!-- Schneeflocken -->
-    <div class="snowflakes">
-        <div class="snowflake" style="--random-x: 0.1"></div>
-        <div class="snowflake" style="--random-x: 0.2"></div>
-        <div class="snowflake" style="--random-x: 0.3"></div>
-        <div class="snowflake" style="--random-x: 0.4"></div>
-    </div>
-
     <script>
-        // Virtuelles Geschenk
+        // Witz Liste
+        const jokes = [
+            "Die Oma zur Enkelin: 'Du darfst dir zu Weihnachten von mir ein schönes Buch wünschen!' Enkelin: 'Fein, dann wünsche ich mir dein Sparbuch.'",
+            "Lehrerin: 'Wer kann einen Satz mit Weihnachtsfest bilden?' Schüler: 'Der Elch hält sein Geweih nachts fest.'",
+            "Sohn: 'Weißt du, welcher Zug am meisten Verspätung hat?' Papa: 'Nein.' Sohn: 'Der, den ich mir letztes Jahr zu Weihnachten gewünscht habe.'",
+            "Oma, die Trommel war wirklich mein schönstes Weihnachtsgeschenk. 'Wirklich?', freut sich die Oma. 'Ja, Mama gibt mir jeden Tag einen Euro, damit ich nicht damit spiele.'",
+            "Kind: 'Mama, ich wünsche mir ein Pony zu Weihnachten.' Mama: 'Alles klar, mein Schatz. Wir gehen morgen zum Friseur.'",
+            "Was hat man, wenn man Glühwein zu heiß trinkt? Gebrannte Mandeln.",
+            "Ein Mann fragt seine Frau: 'Schatz, was wünschst du dir denn zu Weihnachten?' Die Frau: 'Die Scheidung!' Er: 'Na, so viel wollte ich eigentlich nicht ausgeben!'",
+            "Vater: 'Fritzchen, zünde doch bitte den Weihnachtsbaum an.' Fritzchen: 'Die Kerzen auch?'",
+            "Fritzchen: 'Vater, der Christbaum brennt.' Vater: 'Fritzchen – das heißt: Er leuchtet.' Fritzchen: 'Ok, jetzt leuchtet auch die Gardine!'",
+            "Wie nennt man einen dünnen Weihnachtsmann? Nikolauch.",
+            "Was hat der Monat Dezember, was kein anderer hat? Den Buchstaben 'D'.",
+            "Was ist das Lieblingslied aller Eltern? Stille Nacht!",
+            "Wie heißen die Fußballschuhe von Jesus? Christstollen.",
+            "Wie heißt ein alter Schneemann noch? Pfütze.",
+            "Was lernen Elfen in der Weihnachtsschule? Das Elfabet.",
+            "Woran leidet Santa Claus, wenn er im Kamin steckenbleibt? Claustrophobie.",
+            "An welchem Ort kommt Silvester noch vor Weihnachten? Im Wörterbuch!",
+            "Was sagt der Weihnachtsmann zu Beginn eines Rennens? Auf die Plätze, fertig, ho ho ho!",
+            "Warum können Weihnachtsbäume nicht gut häkeln? Weil sie immer die Nadeln fallen lassen."
+        ];
+
+        // Funktion, um einen zufälligen Witz zu zeigen
         function openGift() {
-            alert("Überraschung! 🎁 Frohe Weihnachten! Du hast ein tolles Jahr hinter dir!");
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const joke = jokes[randomIndex];
+            document.getElementById("giftMessage").innerText = joke;
         }
     </script>
-    <script type="text/javascript" src="snowflakes.js"></script> 
 </body>
 </html>
-
