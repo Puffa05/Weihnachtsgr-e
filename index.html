@@ -58,35 +58,6 @@
             color: #ccc;
         }
 
-        .gift-form {
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .gift-form input, .gift-form textarea {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .gift-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-
-        .gift-form button:hover {
-            background-color: #218838;
-        }
-
         /* Schneeflocken Animation */
         @keyframes snow {
             0% { transform: translateY(-100px); }
@@ -104,14 +75,6 @@
         .snowflake::before {
             content: "❄";
         }
-
-        /* Quiz-Layout */
-        .quiz {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
     </style>
 </head>
 <body>
@@ -124,23 +87,6 @@
         
         <!-- Virtuelles Geschenk -->
         <div id="gift" class="button" onclick="openGift()">Klicke hier für dein Weihnachtsgeschenk!</div>
-        
-        <!-- Quiz -->
-        <div class="quiz">
-            <h2>Weihnachtsquiz!</h2>
-            <p>Wie viele Rentiere zieht der Weihnachtsmann?</p>
-            <button onclick="checkAnswer('8')">8</button>
-            <button onclick="checkAnswer('9')">9</button>
-            <button onclick="checkAnswer('10')">10</button>
-            <p id="quiz-result"></p>
-        </div>
-        
-        <!-- Weihnachtswunschformular -->
-        <div class="gift-form">
-            <h2>Was ist dein größter Wunsch für Weihnachten?</h2>
-            <textarea id="wish" placeholder="Schreibe deinen Wunsch hier..."></textarea>
-            <button onclick="submitWish()">Absenden</button>
-        </div>
     </div>
 
     <footer>
@@ -160,21 +106,8 @@
         function openGift() {
             alert("Überraschung! 🎁 Frohe Weihnachten! Du hast ein tolles Jahr hinter dir!");
         }
-
-        // Quiz Antwortüberprüfung
-        function checkAnswer(answer) {
-            if (answer === '9') {
-                document.getElementById('quiz-result').innerText = 'Richtig! 🎅🏼';
-            } else {
-                document.getElementById('quiz-result').innerText = 'Leider falsch! 😅';
-            }
-        }
-
-        // Weihnachtswunsch absenden
-        function submitWish() {
-            const wish = document.getElementById('wish').value;
-            alert("Dein Wunsch: " + wish + " wurde gesendet. 🎄");
-        }
     </script>
+    <script type="text/javascript" src="snowflakes.js"></script> 
 </body>
 </html>
+
