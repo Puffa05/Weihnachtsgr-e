@@ -13,7 +13,7 @@ let snowflakes = (function() {
 		flakeChar: '*', // char used for flake
 		speed: .05, // speed of flakes
 		size: [15, 30], // minimum/maximum flake font size
-		drift: 15, // horizontal drift
+		drift: 30, // horizontal drift
 	};
 	
 	///////////////////////////// private vars /////////////////////////////
